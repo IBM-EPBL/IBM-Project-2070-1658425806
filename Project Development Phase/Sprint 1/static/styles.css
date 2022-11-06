@@ -1,0 +1,150 @@
+*
+{  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body 
+{
+  background-color: #FFDEE9;
+  background-image: linear-gradient(#0f1624, #1c3148);
+  background-attachment: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+h1 
+{  
+  padding-top: 15px;
+	text-align: center;  
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.pclass
+{
+ color: white;
+ font-size: 15px;
+ text-align: justify;
+ padding: 20px 20px 0 20px;
+}
+
+ul
+{
+ color: white;
+ padding-left:50px;
+ font-size: 15px;
+ text-align: justify;
+}
+
+.wrapper
+{
+  max-width: 440px;
+  padding: 10 20px;
+  margin: 60px auto;
+}
+
+.container
+{
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 25px;
+}
+
+.container form
+{
+  font-size: 16px;
+  font-weight: bold;
+  padding: 30px 25px 25px 25px;
+}
+
+.container form .row
+{
+  height: 45px;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.container form .row input
+{
+  height: 70%;
+  width: 100%;
+  outline: none;
+  padding-left: 20px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.container form .row label
+{
+  padding: 15px 0px;
+}
+
+form .row input:focus
+{
+  border-color: #6a11cb;
+  outline: none;
+  box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+
+.button
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+button
+{
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 32px;
+  border: 2px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover 
+{
+  color: white;
+  background-image: linear-gradient(#2c3f63, #3d5f87); 
+}
+
+.links
+{
+  color: white;
+  font-size: 17px;
+  text-decoration: none!important;
+}
+
+.links p 
+{
+  margin: 10px;
+}
+
+a:hover
+{
+  color: wheat;
+}
+
+.txt
+{
+  text-align: center;
+}
+.notification
+{
+  border-radius: 4px;
+  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+  position: relative;
+}
+.notification.is-danger {
+  background-color: #ff3860;
+  color: #fff;
+}
