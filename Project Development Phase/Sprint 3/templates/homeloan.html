@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesappln.css') }}">
+  <link rel="stylesheet" href="C:\Bhuv\IBM_code\static\stylesappln.css">
+  <title>Home Loan Application Form</title>
+</head>
+<body>
+  <h1>Home Loan Application Form</h1>
+  <div class="wrapper">
+    <div class="container">  
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+
+              {% if category == 'error' %}
+              <div class="notification is-danger">
+                {{ message }}
+              </div> 
+              
+              {% elif category == 'exception' %}
+              <div class="notification is-danger">
+                {{ message }}
+              </div> 
+                  
+              {% elif category == 'success' %}
+                <div class="notification is-success">
+                  {{ message }}
+                </div> 
+        
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endwith %}    
+        
+        <form action="{{ url_for('homeloan') }}" method="post">
+
+          <div class="row">
+          <label>Name</label><br>
+          <input type="text" name="name" id="name"/>
+          </div>
+
+          <div class="row">
+          <label>Gender</label><br>
+          <input type="radio" id="gender" name="Gender" value="Male"/> Male<br>  
+          <input type="radio" id="gender" name="Gender" value="Female"/> Female <br/> 
+          <input type="radio" id="gender" name="Gender" value="Others"/> Others<br/> 
+          </div>
+
+          <div class="row">
+          <label >Marital Status</label><br>
+          <input type="radio" id="Married" name="Married" value="Yes"/> Yes<br>  
+          <input type="radio" id="Married" name="Married" value="No"/> No<br/> 
+          </div>
+
+          <div class="row">
+          <label>Dependents</label><br>
+          <input type="radio" id="Dependents" name="Dependents" value="0"/> 0<br>  
+          <input type="radio" id="Dependents" name="Dependents" value="1"/> 1<br/> 
+          <input type="radio" id="Dependents" name="Dependents" value="2"/> 2<br>  
+          <input type="radio" id="Dependents" name="Dependents" value="3+"/> 3+<br/> 
+          </div>
+
+          <div class="row">
+          <label >Education</label><br>
+          <input type="radio" id="Education" name="Education" value="Graduate"/> Graduate<br>  
+          <input type="radio" id="Education" name="Education" value="Not Graduate"/> Not Graduate<br/> 
+          </div>
+
+          <div class="row">
+          <label >Self Employed</label><br>
+          <input type="radio" id="Self_Employed" name="Self_Employed" value="Yes"/> Yes<br>  
+          <input type="radio" id="Self_Employed" name="Self_Employed" value="No"/> No<br/> 
+          </div>
+
+          <div class="row">
+          <label >Applicant Income</label><br>
+          <input type="number" id="ApplicantIncome" name="ApplicantIncome"/>
+          </div>
+
+          <div class="row">
+          <label >LoanAmount</label><br>
+          <input type="number" id="LoanAmount" name="LoanAmount"/>
+          </div>
+
+          <div class="row">
+          <label >Term</label><br>
+          <input type="number" id="Loan_Amount_Term" name="Loan_Amount_Term"/>
+          </div>
+
+          <div class="row">
+          <label>Have availed loan before</label><br>
+          <input type="radio" id="Credit_History" name="Credit_History" value="1"/> Yes<br>  
+          <input type="radio" id="Credit_History" name="Credit_History" value="0"/> No<br/>
+          </div>
+
+          <div class="row">
+          <label>Property Area</label><br>
+          <input type="radio" id="Property_Area" name="Property_Area" value="Urban"/> Urban<br> 
+          <input type="radio" id="Property_Area" name="Property_Area" value="Semiurban"/> Semiurban<br/>  
+          <input type="radio" id="Property_Area" name="Property_Area" value="Rural"/> Rural<br/> 
+          </div>
+
+          <div class="button">
+            <button type="submit">Apply</button>
+          </div>
+
+        </form>
+    </div>
+  </div> 
+</body>
+</html>
