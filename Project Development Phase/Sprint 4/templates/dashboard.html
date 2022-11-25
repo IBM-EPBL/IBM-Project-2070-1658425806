@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+    
+</head>
+<body>
+
+    <h1 style="color:rgb(218, 153, 33);">SMART LENDER - APPLICANT CREDIBILITY PREDICTION FOR LOAN APPROVAL</h1>
+    <br>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                {% if category == 'error' %}
+                  <div class="notification is-danger">
+                    {{ message }}
+                  </div> 
+                
+                {% elif category == 'exception' %}
+                <div class="notification is-danger">
+                  {{ message }}
+                </div> 
+                  
+                {% elif category == 'success' %}
+                  <div class="notification is-success">
+                    {{ message }}
+                  </div>
+          
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+
+    <div class="row">
+        <div class="column">          
+          <div class="card">
+            <center>            
+            <h4><b> HOME LOAN</b></h4>
+            <img src="{{ url_for('static', filename='img1.jpg') }}" alt="homeloan" style="width:100%; height:300px;">
+            <p>
+              <a class ="a1" href="{{ url_for('homeloan') }}" >
+              Click here to apply for Home loan </a> 
+            </p> 
+            </center>          
+          </div>
+          <br><br>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <center>            
+            <h4><b> BUSINESS LOAN</b></h4>
+            <img src="{{ url_for('static', filename='img2.jpg') }}" alt="businessloan" style="width:100%; height:300px;">
+            <p> 
+              <a class ="a1" href="{{ url_for('businessloan') }}" >
+              Click here to apply for Business loan </a>
+            </p>
+            </center>
+          </div>
+          <br><br>
+        </div>
+    </div> 
+    
+    <center>       
+      <a href="{{ url_for('status') }}">
+        <h2>Click here to view Loan Application status</h2>
+      </a>
+    </center>
+    <br><br>
+    <center>
+    <div class="button">
+      <button type="button" onclick="window.location.href='{{ url_for('logout')}}';">LOGOUT</button>
+    </div>
+    </center>
+    
+</body>
+</html>
