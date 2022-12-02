@@ -1,0 +1,7 @@
+Flask
+Flask-Bcrypt       
+Flask-Login        
+Flask-Mail         
+Flask-SQLAlchemy  
+Flask-WTF          
+PyJWT

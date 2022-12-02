@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+    
+</head>
+<body>
+
+    <h1 style="color:rgb(218, 153, 33);">LOAN STATUS</h1>
+    <div style="width:50%; margin-top:70px; margin-left:auto; margin-right:auto;">
+        <div id="result1" style="display:none ;">
+            <p style="color:rgb(218, 153, 33);"> HOME LOAN </p>
+            <p>Prediction: {{ hstat }}</p>
+            <p>Loan Status: {{ r1 }}</p>
+        </div>
+        <br><br><br>
+        <div id="result2" style="display: none ;">
+            <p style="color:rgb(218, 153, 33);"> BUSINESS LOAN </p>
+            <p>Prediction: {{ bstat }}</p>
+            <p>Loan Status: {{ r2 }}</p>
+        </div>
+        
+        <br><br><br><br><br><br>
+        <center>
+            <div class="button">
+              <button type="button" onclick="window.location.href='{{ url_for('logout')}}';">LOGOUT</button>
+            </div>
+        </center>
+    </div>
+
+    <script>
+        e1 = document.getElementById('result1');
+        e2 = document.getElementById('result2');
+        
+        if('{{ hstat }}' == '1' || '{{ hstat }}' == '0')
+        {
+            e1.style.display = 'block';
+        }
+        if('{{ bstat }}' == '1' || '{{ bstat }}' == '0')
+        {
+            e2.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
